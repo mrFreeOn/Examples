@@ -16,16 +16,16 @@ void SelectionSort(int[] array)
 {
     for (int i = 0; i < array.Length - 1; i++)
     {
-        int MinPosition = i;
+        int MaxPosition = i;
         for (int j = i + 1; j < array.Length; j++)
-            if (array[j] < array[MinPosition])
+            if (array[j] > array[MaxPosition])
             {
-                MinPosition = j;
+                MaxPosition = j;
             }
 
         int temporary = array[i];
-        array[i] = array[MinPosition];
-        array[MinPosition] = temporary;
+        array[i] = array[MaxPosition];
+        array[MaxPosition] = temporary;
     }
 }
 
